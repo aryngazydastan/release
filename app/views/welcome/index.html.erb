@@ -1,0 +1,135 @@
+<div class='bodymain'>
+
+<div class='container' style="width: 500px;">
+	<div class='row' style='padding-top: 5px;'>
+				<div class='col-md-2'><%= image_tag("logo.png", :size => "70x70") %></div>
+
+				<div class='col-md-4' style='padding-left: 25px; padding-top: 5px;'>
+				<h5><b>Lowcoster App</b><br>
+				<h7>мобильное приложение заказа такси</h7></bold></h5>
+				<marquee scrollamount="2" direction="up" loop="true" height='15px' pad>
+				<h7><b>
+				Акколь<br><br>
+				Аксай<br><br>
+				Аксу<br><br>
+				Актау<br><br>
+				Алга<br><br>
+				Аркалык<br><br>
+				Астана<br><br>
+				Аягоз<br><br>
+				Байконыр<br><br>
+				Экибастуз<br><br>
+				Есик<br><br>
+				Есиль<br><br>
+				Хромтау<br><br>
+				Кандыагаш<br><br>
+				Караганда<br><br>
+				Каратау<br><br>
+				Каркаралинск<br><br>
+				Кокшетау<br><br>
+				Костанай<br><br>
+				Кульсары<br><br>
+				Курчатов<br><br>
+				Кызылорда<br><br>
+				Лисаковск<br><br>
+				Павлодар<br><br>
+				Петропавловск<br><br>
+				Риддер<br><br>
+				Рудный<br><br>
+				Сарань<br><br>
+				Шемонаиха<br><br>
+				Чу<br><br>
+				Степногорск<br><br>
+				Шымкент<br><br>
+				Талдыкорган<br><br>
+				Талгар<br><br>
+				Тараз<br><br>
+				Текели<br><br>
+				Темиртау<br><br>
+				Туркестан<br><br>
+				Уральск<br><br>
+				Усть-Каменогорск<br><br>
+				Жанаозен<br><br>
+				Жаркент<br><br>
+				Жезказган<br><br>
+				Житикара<br><br>
+				Зыряновск<br><br>
+				</b></h7></marquee>
+
+				</div>
+
+				
+			
+				<div class='col-md-1' style='padding-top: 17px;'>
+					 	<div class="dropdown">
+						  <button class="btn dropdown-toggle" type="button" data-toggle="dropdown"><h7><strong>Мобильное приложение
+						  </h7></strong><span class="caret"></span></button>
+						  <ul class="dropdown-menu">
+						    <li><a href="https://play.google.com/store/apps/details?id=alzhanov.bauyrzhan.lowcoster&hl=ru"><h6><strong>Скачать Android приложение</strong></h6></a></li>
+						    <li><a href="https://itunes.apple.com/kz/app/lowcoster/id1064389464?mt=8"><h6><strong>Скачать iOS приложение</strong></h6></a></li>
+						  </ul>
+						</div>
+				</div>
+				
+	</div>
+</div>
+
+<div style=" padding-left: 380px; ">
+	
+<%= image_tag("logo1.gif", :size => "440x440") %>
+
+</div>
+
+<div class='container' style='width: 500px; padding-left: 5px;'>
+	
+		<h5><table id="results-table">
+		
+		</table></h5>
+
+	<script>
+	  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+	  ga('create', 'UA-56116735-2', 'auto');
+	  ga('send', 'pageview');
+
+	</script>
+
+	<script type="text/javascript">
+
+			Parse.initialize("VkkhHPeQopcKg0FFI80fda03bfXpyLuNWVn5AFEI", "4om2ITt3WkJg3g4DNLhUIIMIbJvxR0GbI08Aogti");
+			var GameScore = Parse.Object.extend("Almaty");
+			var query = new Parse.Query(GameScore);
+			query.find({
+			    success: function (results) {
+			        for (var i = 0; i < results.length; i++) {
+			            var object = results[i];
+						var cost = object.get('cost');
+						var from = object.get('from');
+						var to = object.get('to');
+						var address =  object.get('address');
+						var date = object.get('createdAt').toLocaleString();
+							(function ($) {
+								$('#results-table').append(
+									'<tr><td><h6><b>'
+									 + from + '</br>'
+									  + to + '</b></h6></td><td><h6><b>'  
+									  + cost + ' тенге' 
+									  + '</b></h6></td><td><h6><b>'
+									   + date + '</b></h6></td><td><g data-toggle="tooltip" data-placement="right" title="Чтобы принимать заказы, как водитель - надо скачать приложение">'+'<%= image_tag("info-button.png", :size => "10x10") %>'+'</g></td></tr>'
+									   );
+							})(jQuery);
+			        }
+			    },
+			    error: function (error) {
+			        alert("Error: " + error.code + " " + error.message);
+			    }
+			});
+  	</script>
+
+</div>
+
+<div class='container' style='width: 500px;'><h6><b><%= image_tag("logo.png", :size => "25x25") %> Lowcoster App - информационный сервис для водителей.</b></h6></div>
+</div>
